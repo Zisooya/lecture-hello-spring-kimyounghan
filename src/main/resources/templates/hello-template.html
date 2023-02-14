@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--서버 데이터 읽어와서 템플릿 엔진으로서 동작을 하게 되면, th:text="'hello '+${name}"값으로 치환되어 나타남.hello! empty는 서버 없어서 미리보기용으로 적어둔 것.-->
+<p th:text="'hello '+${name}">hello! empty</p>
+</body>
+</html>
