@@ -34,4 +34,8 @@ public class MemoryMemberRepository implements MemberRepository {
     public List<Member> findAll() {
         return new ArrayList<>(store.values());
     }
+    public void clearStore() {
+        // clear() : 스토어를 비우는 메소드.
+        store.clear();
+    }
 }
