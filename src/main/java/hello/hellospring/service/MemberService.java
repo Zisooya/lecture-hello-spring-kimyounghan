@@ -24,7 +24,8 @@ public class MemberService {
     * 회원가입
     */
     public Long join(Member member) {
-
+/*
+// AOP 적용 전 시간 측정 로직
         long start = System.currentTimeMillis();
 
         try {
@@ -36,6 +37,11 @@ public class MemberService {
             long timeMs = finish - start;
             System.out.println("join = " + timeMs + "ms");
         }
+*/
+
+        validateDuplicateMember(member); //중복 회원 검증
+        memberRepository.save(member);
+        return member.getId();        
 
     }
 
@@ -51,7 +57,8 @@ public class MemberService {
      * @return
      */
     public List<Member> findMembers() {
-
+/*
+// AOP 적용 전 시간 측정 로직
         long start = System.currentTimeMillis();
         try {
             return memberRepository.findAll();
@@ -60,7 +67,8 @@ public class MemberService {
             long timeMs = finish - start;
             System.out.println("findMembers = " + timeMs + "ms");
         }
-
+*/
+        return memberRepository.findAll();
     }
 
     public Optional<Member> findOne(Long memberId) {
